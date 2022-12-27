@@ -18,26 +18,52 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               PizzaButton(
-                  pizzaPosition: PizzaPosition.topLeft,
-                  insideText: "Hi",
-                  onTap: () {}),
+                pizzaPosition: PizzaPosition.topLeft,
+                insideText: "Exit",
+                onTap: () {},
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.grey[700]),
+                ),
+                onPressed: () {},
+                child: Text("Help"),
+              ),
               PizzaButton(
-                  pizzaPosition: PizzaPosition.topRight,
-                  insideText: "Hi",
-                  onTap: () {}),
+                pizzaPosition: PizzaPosition.topRight,
+                insideText: "Settings",
+                onTap: () {},
+              ),
             ],
           ),
+          Column(children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(StadiumBorder())),
+              onPressed: () {},
+              child: Text("Let's Go!"),
+            )
+          ]),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               PizzaButton(
-                  pizzaPosition: PizzaPosition.bottomLeft,
-                  insideText: "Hi",
-                  onTap: () {}),
+                pizzaPosition: PizzaPosition.bottomLeft,
+                insideText: "Voice Commands",
+                onTap: () {},
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.grey[700]),
+                ),
+                onPressed: () {},
+                child: Text("Narrate"),
+              ),
               PizzaButton(
-                  pizzaPosition: PizzaPosition.bottomRight,
-                  insideText: "Hi",
-                  onTap: () {}),
+                pizzaPosition: PizzaPosition.bottomRight,
+                insideText: "Let's Go",
+                onTap: () {},
+              ),
             ],
           )
         ],

@@ -6,7 +6,7 @@ enum PizzaPosition { topLeft, topRight, bottomLeft, bottomRight }
 
 class PizzaButton extends StatelessWidget {
   final PizzaPosition pizzaPosition;
-  final _buttonSize = 80.0;
+  final _buttonSize = 100.0;
   var insideText = "";
   Function onTap;
 
@@ -38,6 +38,19 @@ class PizzaButton extends StatelessWidget {
     }
   }
 
+  Alignment? _generateAlignment() {
+    switch (pizzaPosition) {
+      case PizzaPosition.bottomRight:
+        return Alignment.bottomRight;
+      case PizzaPosition.bottomLeft:
+        return Alignment.bottomLeft;
+      case PizzaPosition.topRight:
+        return Alignment.topRight;
+      case PizzaPosition.topLeft:
+        return Alignment.topLeft;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -46,15 +59,18 @@ class PizzaButton extends StatelessWidget {
         width: _buttonSize,
         height: _buttonSize,
         // margin: EdgeInsets.all(1.0),
-        alignment: Alignment.center,
+        alignment: _generateAlignment(),
         decoration: BoxDecoration(
-          color: Colors.pink[300],
+          color: Colors.red[900],
           borderRadius: _generateBorderRadius(),
         ),
-        child: Text(
-          insideText,
-          style: TextStyle(
-            color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 13),
+          child: Text(
+            insideText,
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
         ),
       ),

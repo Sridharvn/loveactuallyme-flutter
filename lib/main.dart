@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.pink,
         fontFamily: 'Poppins',
+        visualDensity: VisualDensity.comfortable,
       ),
       home: SafeArea(
         child: const Home(),
