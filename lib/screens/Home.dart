@@ -36,14 +36,17 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
-          Column(children: [
-            ElevatedButton(
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all(StadiumBorder())),
-              onPressed: () {},
-              child: Text("Let's Go!"),
-            )
-          ]),
+          Column(
+            children: [
+              Image.asset("lib/assets/images/homepic.png", fit: BoxFit.contain),
+              ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(StadiumBorder())),
+                onPressed: () {},
+                child: Text("Let's Go!"),
+              ),
+            ],
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
