@@ -1,14 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_import, implementation_imports
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:loveactuallyme/components/CornerButtons.dart';
-import 'package:loveactuallyme/screens/MenuPage.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class Home extends StatelessWidget {
             children: [
               PizzaButton(
                 pizzaPosition: PizzaPosition.topLeft,
-                insideText: "Exit",
+                insideText: "Back",
                 onTap: () {},
               ),
               ElevatedButton(
@@ -33,22 +31,44 @@ class Home extends StatelessWidget {
               ),
               PizzaButton(
                 pizzaPosition: PizzaPosition.topRight,
-                insideText: "Settings",
+                insideText: "Community",
                 onTap: () {},
               ),
             ],
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset("lib/assets/images/homepic.png", fit: BoxFit.contain),
               ElevatedButton(
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(StadiumBorder())),
+                    // shape: MaterialStateProperty.all(StadiumBorder()),
+                    ),
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => MenuPage()));
                 },
-                child: Text("Let's Go!"),
+                child: Text("Social"),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                    // shape: MaterialStateProperty.all(StadiumBorder())
+                    ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MenuPage()));
+                },
+                child: Text("Professional"),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                    // shape: MaterialStateProperty.all(StadiumBorder())
+                    ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MenuPage()));
+                },
+                child: Text("Community"),
               ),
             ],
           ),
@@ -57,7 +77,7 @@ class Home extends StatelessWidget {
             children: [
               PizzaButton(
                 pizzaPosition: PizzaPosition.bottomLeft,
-                insideText: "Voice Commands",
+                insideText: "Social",
                 onTap: () {},
               ),
               ElevatedButton(
@@ -69,7 +89,7 @@ class Home extends StatelessWidget {
               ),
               PizzaButton(
                 pizzaPosition: PizzaPosition.bottomRight,
-                insideText: "Let's Go",
+                insideText: "Professional",
                 onTap: () {},
               ),
             ],

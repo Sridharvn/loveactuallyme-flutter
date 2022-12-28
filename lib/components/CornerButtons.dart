@@ -65,7 +65,7 @@ class PizzaButton extends StatelessWidget {
           borderRadius: _generateBorderRadius(),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 13),
+          padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10),
           child: Text(
             insideText,
             style: TextStyle(
